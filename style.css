@@ -1,0 +1,372 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #e7e7e7;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    background-image: url(gradient.png);
+    background-repeat: no-repeat;
+    
+}
+
+/* Gradient Overlay */
+.gradient-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(101, 101, 101, 0.2), rgba(127, 66, 167, 0.3), rgba(102, 0, 197, 0.3));
+    opacity: 0.5;
+    z-index: -1;
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header */
+header {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+.logo .highlight {
+    color: #ff4081;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    gap: clamp(1.5rem, 2vw, 2.5rem);
+    max-width: 600px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #e7e7e7;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ff4081;
+}
+
+.btn-signing {
+    background-color: #ff4081;
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    border: none;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-signing:hover {
+    background-color: #e91e63;
+    transform: translateY(-2px);
+}
+
+.btn-signing a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Main Content */
+main {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.tag-box {
+    width: clamp(200px, 30vw, 300px);
+    height: 40px;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #656565, #7f42a7, #6600c5, #5300a0, #757575);
+    background-size: 200%;
+    animation: animateGradient 3s linear infinite;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes animateGradient {
+    0% { background-position: 0%; }
+    100% { background-position: 200%; }
+}
+
+.tag-box .tag {
+    position: relative;
+    inset: 2px;
+    background-color:transparent ;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 5px;
+}
+
+.tag-box .tag:hover {
+    color: #ff4081;
+}
+
+.content h1 {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin: 2rem 0;
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+}
+
+.description {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: #b0b0b0;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-get-started, .btn-signing-main {
+    text-decoration: none;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-get-started {
+    border: 1px solid #ff4081;
+    color: #ff4081;
+}
+
+.btn-get-started:hover {
+    background-color: #ff4081;
+    color: #fff;
+}
+
+.btn-signing-main {
+    background-color: #ff4081;
+    color: #fff;
+}
+
+.btn-signing-main:hover {
+    background-color: #e91e63;
+}
+
+/* AI Section */
+.ai-section {
+    padding: 4rem 0;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.ai {
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+/* Removed .robot-3d styling since <spline-viewer> is gone */
+
+/* Chat Box */
+.chat-box {
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 1rem;
+    overflow-y: auto;
+    backdrop-filter: blur(5px);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.input-group .form-control {
+    background-color: #1e1e1e;
+    border: 1px solid #ff4081;
+    color: #e7e7e7;
+}
+
+.input-group .btn-light {
+    background-color: #ff4081;
+    color: #fff;
+    border: none;
+}
+
+.input-group .btn-light:hover {
+    background-color: #e91e63;
+}
+
+/* Services and Testimonials */
+.section-padding {
+    padding: 4rem 0;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.heading-1 {
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+.card-img-top {
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+}
+
+.card-text {
+    font-size: clamp(0.9rem, 1.2vw, 0.95rem);
+    color: #b0b0b0;
+}
+
+.btn-primary {
+    background-color: #ff4081;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e91e63;
+}
+
+/* Footer */
+.footer {
+    background-color: #1e1e1e;
+}
+
+.footer h5 {
+    font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+    margin-bottom: 1rem;
+}
+
+.footer a {
+    color: #b0b0b0;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #ff4081;
+}
+
+/* Responsive Design */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1600px;
+    }
+    .content {
+        max-width: 800px;
+    }
+    .chat-box {
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .content h1 {
+        font-size: clamp(2rem, 3.5vw, 3rem);
+    }
+    .ai {
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+        max-width: 100%;
+    }
+    .btn-signing {
+        width: 100%;
+        text-align: center;
+    }
+    .content {
+        margin: 2rem 0;
+        text-align: center;
+    }
+    .content h1 {
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+    }
+    .description {
+        font-size: clamp(0.9rem, 1.2vw, 1rem);
+    }
+    .tag-box {
+        width: auto;
+        margin: 0 auto;
+    }
+    .ai {
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo {
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+    }
+    .content h1 {
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+    }
+    .btn-get-started, .btn-signing-main {
+        font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+        padding: 0.6rem 1.5rem;
+    }
+    .ai {
+        font-size: clamp(1.2rem, 2vw, 1.8rem);
+    }
+}
